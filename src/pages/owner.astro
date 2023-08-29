@@ -1,0 +1,13 @@
+---
+import { Duck } from "../components/duck";
+import { NewRoomCard } from "../components/card/new-room";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Quack | Minimal Queue">
+  <main class="font-bold flex flex-col w-screen min-h-screen">
+    <div class="m-auto text-4xl flex flex-col space-y-5">
+      <NewRoomCard client:load />
+    </div>
+  </main>
+</Layout>

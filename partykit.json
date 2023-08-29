@@ -1,0 +1,4 @@
+{
+  "name": "thinc-quack",
+  "main": "./partykit/server.ts"
+}

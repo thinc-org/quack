@@ -1,0 +1,23 @@
+---
+const { room } = Astro.params;
+import { Duck } from "../../components/duck";
+import { QueueCard } from "../../components/card/queue";
+import { QRCode } from "../../components/card/qrcode";
+
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Quack | Minimal Queue">
+  <main class="font-bold grid grid-cols-10 w-screen min-h-screen">
+    <div class="col-span-3 border-r-2 border-contrast">
+      <div class="p-5">
+        <h1 class="text-4xl"><Duck /> Quack</h1>
+        <p class="text-base font-normal">Minimal Queue</p>
+      </div>
+      <QRCode client:only room={room as string} />
+    </div>
+    <div class="col-span-7 flex flex-col h-screen overflow-scroll">
+      <QueueCard client:load room={room as string} />
+    </div>
+  </main>
+</Layout>

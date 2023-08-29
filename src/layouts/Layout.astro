@@ -1,0 +1,65 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  body {
+    font-family: "Space Grotesk", sans-serif;
+    @apply bg-backdrop text-contrast;
+  }
+  .stroke-text {
+    border: 2px #000;
+    outline-offset: 0px;
+    outline: #031926 3px;
+    color: #fff;
+    font-size: 72px;
+    line-height: 140%;
+    font-weight: 700;
+    white-space: nowrap;
+    background-clip: border-box;
+    -webkit-text-fill-color: inherit;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #cdd1d4;
+  }
+
+  .duck {
+    animation: spin 300ms linear;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(-15deg);
+    }
+    to {
+      transform: rotate(-5deg);
+    }
+  }
+
+  .button-backdrop {
+    box-shadow: 3px 3px 0 0 #031926;
+  }
+</style>

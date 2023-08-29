@@ -1,0 +1,26 @@
+---
+import { Duck } from "../components/duck";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Quack | Minimal Queue">
+  <main class="font-bold flex flex-col w-screen min-h-screen">
+    <div class="m-auto text-6xl flex flex-col space-y-5">
+      <h1 class="text-center">
+        Quack
+        <Duck />
+      </h1>
+      <p class="text-base text-center font-normal">
+        Quack is an minimal (neo-brutalism) tool for making queue
+      </p>
+      <div class="flex justify-center">
+        <a
+          href="/owner"
+          class="bg-orange w-fit hover:shadow-none hover:ml-0 hover:mb-0 -ml-1 -mb-1 transition-all rounded-full p-2 text-base font-normal text-white button-backdrop border border-black"
+        >
+          Get Started
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

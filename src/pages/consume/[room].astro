@@ -1,0 +1,16 @@
+---
+const { room } = Astro.params;
+import { Duck } from "../../components/duck";
+import { Consume } from "../../components/card/consume";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Quack | Minimal Queue">
+  <main class="font-bold w-screen flex flex-col min-h-screen">
+    <h1 class="text-4xl text-center mt-5"><Duck /> Quack</h1>
+    <p class="text-base text-center font-normal">Minimal Queue</p>
+    <div class="m-auto flex flex-col w-[90vw] max-w-2xl">
+      <Consume client:load room={room as string} />
+    </div>
+  </main>
+</Layout>
