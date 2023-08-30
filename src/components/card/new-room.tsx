@@ -80,7 +80,7 @@ export const NewRoomCard = () => {
       )}
 
       <div className="space-y-5 w-full flex flex-col mt-5">
-        {rooms.map((room) => (
+        {(rooms ?? []).map((room) => (
           <Room key={room.id} id={room.id} name={room.name} />
         ))}
       </div>
